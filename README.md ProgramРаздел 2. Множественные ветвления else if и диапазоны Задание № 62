@@ -1,0 +1,30 @@
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    namespace Program62
+    {
+    internal class Program
+    {
+        static void Main()
+        {
+            Console.Write("Толщина льда (см): ");
+            if (double.TryParse(Console.ReadLine(), out double ice) && ice >= 0)
+            {
+                string access;
+                if (ice < 7) access = "Выход запрещен";
+                else if (ice <= 12) access = "Одиночный пешеход";
+                else if (ice <= 20) access = "Группа людей";
+                else access = "Транспорт";
+
+                Console.WriteLine(access);
+            }
+            else
+            {
+                Console.WriteLine("Ошибка: толщина неотрицательна.");
+            }
+        }
+    }
+    }
